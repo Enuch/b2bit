@@ -1,7 +1,7 @@
 import { ChangeEvent, useContext, useState } from "react"
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../context/Auth/AuthContext";
-import { Formik } from "formik";
+import './index.css';
 
 export const Login = () => {
     const auth = useContext(AuthContext);
@@ -21,7 +21,8 @@ export const Login = () => {
     const handleLogin = async () => {
         if (email && password) {
             const isLogged = await auth.signin(email, password);
-            if(isLogged) {
+            console.log('as')
+            if (isLogged) {
                 navigate('/private');
             } else {
                 alert("Não está logado");
@@ -30,26 +31,30 @@ export const Login = () => {
     }
 
     return (
-        <div>
-            <h2>B2BIT</h2>
-            <label htmlFor="email">E-mail</label>
-            <input
-                name="email"
-                type="text" 
-                value={email}
-                onChange={handleEmailInput}
-                placeholder="Digite seu email"
-            />
-            <label htmlFor="password">Senha</label>
-            <input
-                name="password"
-                type="password" 
-                value={password}
-                onChange={handlePasswordInput}
-                placeholder="Digite seu password"
-            />
+        <div id="box-login">
+            <form id="form">
+                <h2>b2b<span>it</span></h2>
+                <div id="inputs">
+                    <label htmlFor="email">E-mail</label>
+                    <input
+                        name="email"
+                        type="text"
+                        value={email}
+                        onChange={handleEmailInput}
+                        placeholder="@gmail.com"
+                    />
+                    <label htmlFor="password">Password</label>
+                    <input
+                        name="password"
+                        type="password"
+                        value={password}
+                        onChange={handlePasswordInput}
+                        placeholder="**********"
+                    />
 
-            <button onClick={handleLogin}>Logar</button>
+                </div>
+                <button onClick={handleLogin}>Sign In</button>
+            </form>
         </div>
     )
 }
