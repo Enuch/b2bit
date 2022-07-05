@@ -13,7 +13,6 @@ export const AuthProvider = ({ children }: { children: JSX.Element }) => {
 
             if (storageData) {
                 const data = await api.validateToken(storageData);
-                console.log(data, "Ola porra");
                 if (data) {
                     setUser(data);
                 }

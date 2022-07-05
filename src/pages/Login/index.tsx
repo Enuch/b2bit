@@ -18,12 +18,12 @@ export const Login = () => {
         setPassword(event.target.value);
     }
 
-    const handleLogin = async () => {
+    const handleLogin = async (event: any) => {
+        event.preventDefault();
         if (email && password) {
             const isLogged = await auth.signin(email, password);
-            console.log('as')
             if (isLogged) {
-                navigate('/private');
+                navigate('/home');
             } else {
                 alert("Não está logado");
             }
@@ -32,7 +32,7 @@ export const Login = () => {
 
     return (
         <div id="box-login">
-            <form id="form">
+            <form id="form" onSubmit={handleLogin}>
                 <h2>b2b<span>it</span></h2>
                 <div id="inputs">
                     <label htmlFor="email">E-mail</label>
@@ -53,7 +53,7 @@ export const Login = () => {
                     />
 
                 </div>
-                <button onClick={handleLogin}>Sign In</button>
+                <button type="submit">Sign In</button>
             </form>
         </div>
     )
