@@ -1,46 +1,26 @@
-# Getting Started with Create React App
+# Instalando o projeto
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+primeiro rode o comando *npm install* para todas as dependencias necessárias serem instaladas
 
-## Available Scripts
+## Iniciando a aplicação
 
-In the project directory, you can run:
+Agora rode o comando *npm start* para que o projeto seja iniciado no link: http://localhost:3000/
 
-### `npm start`
+### Mudando o projeto ao seu gosto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Vá no arquivo .env e mude o endereço da API para a que vc deseja usar, lembrando que é um sistema de login com token, então sua api precisa estar preparada para receber
+um email, senha e retornar um token.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Agora no arquivo de authProvider, modifique o recebimento dos dados para de acordo com sua API, no meu caso eu recebo o token e guardo na variavel data e o acesso os dados do JSON que minha API retornou desta forma:
+data.tokens.acess
 
-### `npm test`
+os demais dados seguem este padrão. Ex: data.user, data.email e etc.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+após ter configurado para estar de acordo com a forma com que sua API envia os dados entre na pasta Home no index.tsx e também corrija o recebimento dos dados do usário
+para de acordo com o objeto JSON que sua API retornar
 
-### `npm run build`
+#### Testando
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Use o login e senha para acessar a página Home onde ficam os dados do suário
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
