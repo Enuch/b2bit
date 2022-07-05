@@ -17,7 +17,9 @@ data.tokens.acess
 os demais dados seguem este padrão. Ex: data.user, data.email e etc.
 
 após ter configurado para estar de acordo com a forma com que sua API envia os dados entre na pasta Home no index.tsx e também corrija o recebimento dos dados do usário
-para de acordo com o objeto JSON que sua API retornar
+para de acordo com o objeto JSON que sua API retornar.
+
+mas o padrão aqui é auth.user.name, pois aqui os dados são recebinos pelo authprovider.
 
 #### Testando
 
